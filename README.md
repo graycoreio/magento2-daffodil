@@ -18,13 +18,13 @@ This module is intended to be installed with [composer](https://getcomposer.org/
 
 1. Download the package
 ```bash
-composer require graycore/magento2-cors
+composer require graycore/magento2-daffodil
 ```
 2. [Configure the package](/docs/stories/emails.md)
 3. Enable the package
 
 ```bash
-./bin/magento module:enable Graycore_Cors
+./bin/magento module:enable Graycore_Daffodil
 ```
 
 ## Features
