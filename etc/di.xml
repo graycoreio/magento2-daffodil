@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Variable\Model\Source\Variables">
+        <arguments>
+            <argument name="configPaths" xsi:type="array">
+                <item name="daffodil/configuration" xsi:type="array">
+                    <item name="daffodil/configuration/daffodilurl" xsi:type="string">1</item>
+                </item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Email\Model\Template">
+        <plugin name="updateEmailUrlsForDaffodil" type="Graycore\Daffodil\Plugins\EmailTemplateUrlModifierPlugin" sortOrder="1" disabled="false" />
+    </type>
+</config>
