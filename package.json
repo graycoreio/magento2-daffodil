@@ -1,7 +1,7 @@
 {
   "name": "@graycore/magento2-daffodil",
   "description": "A Magento 2 module that configures Magento 2 for usage with Daffodil",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "directories": {
     "doc": "docs"
   },
