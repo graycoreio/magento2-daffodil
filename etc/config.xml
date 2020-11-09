@@ -3,7 +3,7 @@
 	<default>
 		<daffodil>
 			<configuration>
-				<daffodilurl/>
+				<url/>
 				<active>0</active>
 			</configuration>
 			<routes>

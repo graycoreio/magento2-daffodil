@@ -20,7 +20,7 @@ use Magento\Store\Model\ScopeInterface;
 class Configuration
 {
     const ACTIVE = 'daffodil/configuration/active';
-    const DAFFODIL_URL = 'daffodil/configuration/daffodilurl';
+    const DAFFODIL_URL = 'daffodil/configuration/url';
 
     private $_scopeConfig;
     /**
