@@ -1,0 +1,25 @@
+{
+  "name": "@graycore/magento2-daffodil",
+  "description": "A Magento 2 module that configures Magento 2 for usage with Daffodil",
+  "version": "0.1.0",
+  "directories": {
+    "doc": "docs"
+  },
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/graycoreio/magento2-daffodil.git"
+  },
+  "scripts": {
+    "release": "standard-version"
+  },
+  "author": "Damien Retzinger<damienwebdev@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/graycoreio/magento2-daffodil/issues"
+  },
+  "homepage": "https://github.com/graycoreio/magento2-daffodil#readme",
+  "devDependencies": {
+    "standard-version": "^8.0.2"
+  }
+}

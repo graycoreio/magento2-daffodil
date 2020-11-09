@@ -1,0 +1,16 @@
+{
+    "name": "graycore/module-daffodil",
+    "description": "A Magento 2 module that configures Magento 2 for usage with Daffodil",
+    "type": "magento2-module",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Graycore\\Daffodil\\": ""
+        }
+    }
+}
