@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.2](https://github.com/graycoreio/magento2-daffodil/compare/v0.1.1...v0.1.2) (2021-02-10)
+
+
+### Features
+
+* **configuration:** fix a bad function name ([d273b93](https://github.com/graycoreio/magento2-daffodil/commit/d273b93880561df73046e38a52b7e6fee2a10a6d))
+* **routing:** add a plugin to override the url of a category ([e9315f9](https://github.com/graycoreio/magento2-daffodil/commit/e9315f9380985613e31622220a0816984aa14c57))
+
 ### 0.1.1 (2020-11-09)
 
 
