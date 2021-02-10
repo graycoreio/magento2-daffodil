@@ -45,7 +45,7 @@ class Configuration
     /**
      * @return string
      */
-    public function getdaffodilurl()
+    public function getDaffodilUrl()
     {
         $configValue = (string)$this->_scopeConfig->getValue(
             self::DAFFODIL_URL,

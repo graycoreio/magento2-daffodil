@@ -35,6 +35,6 @@ class Mapper
 
     public function mapDomain($url, $domain)
     {
-        return str_replace($domain, $this->_configuration->getdaffodilurl(), $url);
+        return str_replace($domain, $this->_configuration->getDaffodilUrl(), $url);
     }
 }
