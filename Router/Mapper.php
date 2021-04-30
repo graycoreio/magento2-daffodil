@@ -28,9 +28,23 @@ class Mapper
         $this->_routeMap = $routeMap;
     }
 
+    /**
+     * Map, as generally as plausible, to a known mapped route in confirmation.
+     * 
+     * For example, this would map  "customer/index/index" to "some-path" if the 
+     * `$route` was "customer" and the resulting map for "customer" returned 
+     * "some-path". 
+     */
     public function mapRoute(string $url, string $route)
     {
-        return str_replace($route, $this->_routeMap->getMappedRoute($route), $url);
+        /**
+         * The mapping scheme assumes a trailing slash.
+         */
+        if (substr($route, -1) !== "/") {
+            $route = $route . "/";
+        }
+        $regex = "/" . preg_quote($route, '/') . "(?:.*\/.*\/?)" . "/";
+        return preg_replace($regex, $this->_routeMap->getMappedRoute($route), $url);
     }
 
     public function mapDomain($url, $domain)

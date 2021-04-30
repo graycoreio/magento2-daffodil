@@ -19,18 +19,10 @@ use Magento\Store\Model\ScopeInterface;
  */
 class RouteMap
 {
-    /**
-     * ROUTE MAPPING
-     */
-    const CREATE_PASSWORD_ROUTE = "daffodil/routes/change_password";
-    const ACCOUNT_ROUTE = "daffodil/routes/account";
+
+    const MAP_CONFIG_PATH = "daffodil/routes/";
 
     private $_scopeConfig;
-
-    private $_map = [
-        "customer/account/createPassword/" => self::CREATE_PASSWORD_ROUTE,
-        "customer/account/" => self::ACCOUNT_ROUTE
-    ];
 
     /**
      * @param ScopeConfigInterface $scopeConfig
@@ -40,11 +32,21 @@ class RouteMap
         $this->_scopeConfig = $scopeConfig;
     }
 
+    private function createConfigKey($route)
+    {
+        // We need to remove the trailing slash from the route to form the key path.
+        if (substr($route, -1) === "/") {
+            $route = substr($route, 0, -1)
+        }
+        
+        return str_replace('/', '_', strtolower($route));
+    }
+
     public function getMappedRoute($route)
     {
         try {
             return $this->_scopeConfig->getValue(
-                $this->_map[$route],
+                $this->createConfigKey($route),
                 ScopeInterface::SCOPE_STORE
             );
         } catch (\Exception $e) {
