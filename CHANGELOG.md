@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.3](https://github.com/graycoreio/magento2-daffodil/compare/v0.1.2...v0.1.3) (2021-04-30)
+
+
+### Features
+
+* **mapper,email:** apply route mapping to {{ store }} directive ([#1](https://github.com/graycoreio/magento2-daffodil/issues/1)) ([1b8771a](https://github.com/graycoreio/magento2-daffodil/commit/1b8771afaf8ffe10b9eead6dc63f302c33725928))
+
 ### [0.1.2](https://github.com/graycoreio/magento2-daffodil/compare/v0.1.1...v0.1.2) (2021-02-10)
 
 
