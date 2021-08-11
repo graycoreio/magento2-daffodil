@@ -5,15 +5,15 @@
  * See LICENSE.md for details.
  */
 
-declare(strict_types=1);
+declare (strict_types = 1);
 
 namespace Graycore\Daffodil\Plugins;
 
+use Graycore\Daffodil\Configuration\Configuration;
+use Graycore\Daffodil\Router\Mapper;
 use Magento\Email\Model\Template;
 use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Store\Model\Store;
-use Graycore\Daffodil\Configuration\Configuration;
-use Graycore\Daffodil\Router\Mapper;
 
 class EmailTemplateUrlModifierPlugin
 {
@@ -25,7 +25,6 @@ class EmailTemplateUrlModifierPlugin
     private $_urlModel;
 
     private $_mapper;
-
 
     /**
      * @param ScopeConfigInterface $scopeConfig

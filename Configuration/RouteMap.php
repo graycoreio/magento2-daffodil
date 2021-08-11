@@ -5,7 +5,7 @@
  * See LICENSE.md for details.
  */
 
-declare(strict_types=1);
+declare (strict_types = 1);
 
 namespace Graycore\Daffodil\Configuration;
 
@@ -13,9 +13,7 @@ use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Store\Model\ScopeInterface;
 
 /**
- * Class RouteMap
- *
- * @package Graycore\Daffodil\Configuration
+ * Maps Routes that exist in Magento to potentially custom routes that exist in the Daffodil PWA.
  */
 class RouteMap
 {
@@ -43,7 +41,7 @@ class RouteMap
         if (substr($route, -1) === "/") {
             $route = substr($route, 0, -1);
         }
-        
+
         return self::MAP_CONFIG_PATH . str_replace('/', '_', strtolower($route));
     }
 
@@ -55,10 +53,11 @@ class RouteMap
                 ScopeInterface::SCOPE_STORE
             );
             if (!$mapping) {
-                $this->logger->info(
-                    "PWA EMAIL: No PWA route mapping for {$route}. Consider adding a custom configuration key for {$this->createConfigKey($route)}"
-                );
-            } 
+                $this->logger->info("`
+                    Daffodil PWA EMAIL: No PWA route mapping for {$route}. 
+                    Consider adding a custom configuration key for {$this->createConfigKey($route)}
+                `");
+            }
             return $this->_scopeConfig->getValue(
                 $this->createConfigKey($route),
                 ScopeInterface::SCOPE_STORE
