@@ -15,8 +15,8 @@
     <type name="Magento\Catalog\Model\Category">
         <plugin name="updateCategoryUrlsForDaffodil" type="Graycore\Daffodil\Plugins\CategoryUrlModifierPlugin" sortOrder="1" disabled="false" />
     </type>
-
     <type name="Magento\Email\Model\Template\Filter">
         <plugin name="updateStoreDirectiveForDaffodil" type="Graycore\Daffodil\Plugins\EmailFilterStoreDirectiveModifierPlugin" sortOrder="1" disabled="false" />
     </type>
+    <preference for="Magento\Sitemap\Model\Sitemap" type="Graycore\Daffodil\Sitemap\Sitemap" />
 </config>
