@@ -5,17 +5,16 @@
  * See LICENSE.md for details.
  */
 
-declare(strict_types=1);
+declare (strict_types = 1);
 
 namespace Graycore\Daffodil\Plugins;
 
-use Magento\Email\Model\Template;
-use Magento\Framework\App\Config\ScopeConfigInterface;
-use Magento\Store\Model\Store;
 use Graycore\Daffodil\Configuration\Configuration;
 use Graycore\Daffodil\Router\Mapper;
-use Magento\Store\Model\StoreManagerInterface;
+use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Framework\Filter\Template\Tokenizer\Parameter;
+use Magento\Store\Model\Store;
+use Magento\Store\Model\StoreManagerInterface;
 
 class EmailFilterStoreDirectiveModifierPlugin
 {
@@ -66,8 +65,8 @@ class EmailFilterStoreDirectiveModifierPlugin
         )->getBaseUrl();
 
         $result = $this->_mapper->mapDomain($result, $domain);
-        
-        $parameters = $this->getParameters($construction[2]); 
+
+        $parameters = $this->getParameters($construction[2]);
 
         if ($parameters['url']) {
             $result = $this->_mapper->mapRoute($result, $parameters['url']);

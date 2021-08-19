@@ -5,7 +5,7 @@
  * See LICENSE.md for details.
  */
 
-declare(strict_types=1);
+declare (strict_types = 1);
 
 namespace Graycore\Daffodil\Configuration;
 
@@ -13,9 +13,7 @@ use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Store\Model\ScopeInterface;
 
 /**
- * Class Configuration
- *
- * @package Graycore\Daffodil\Configuration
+ * Retrieves configuration for usage throughout the module.
  */
 class Configuration
 {
@@ -36,7 +34,7 @@ class Configuration
      */
     public function isActive()
     {
-        return (bool)$this->_scopeConfig->getValue(
+        return (bool) $this->_scopeConfig->getValue(
             self::ACTIVE,
             ScopeInterface::SCOPE_STORE
         );
@@ -47,7 +45,7 @@ class Configuration
      */
     public function getDaffodilUrl()
     {
-        $configValue = (string)$this->_scopeConfig->getValue(
+        $configValue = (string) $this->_scopeConfig->getValue(
             self::DAFFODIL_URL,
             ScopeInterface::SCOPE_STORE
         );

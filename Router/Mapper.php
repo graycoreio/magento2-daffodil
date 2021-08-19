@@ -5,13 +5,13 @@
  * See LICENSE.md for details.
  */
 
-declare(strict_types=1);
+declare (strict_types = 1);
 
 namespace Graycore\Daffodil\Router;
 
-use Magento\Framework\App\Config\ScopeConfigInterface;
 use Graycore\Daffodil\Configuration\Configuration;
 use Graycore\Daffodil\Configuration\RouteMap;
+use Magento\Framework\App\Config\ScopeConfigInterface;
 
 class Mapper
 {
@@ -30,10 +30,10 @@ class Mapper
 
     /**
      * Map, as generally as plausible, to a known mapped route in confirmation.
-     * 
-     * For example, this would map  "customer/index/index" to "some-path" if the 
-     * `$route` was "customer" and the resulting map for "customer" returned 
-     * "some-path". 
+     *
+     * For example, this would map  "customer/index/index" to "some-path" if the
+     * `$route` was "customer" and the resulting map for "customer" returned
+     * "some-path".
      */
     public function mapRoute(string $url, string $route)
     {
