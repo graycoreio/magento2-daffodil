@@ -13,7 +13,6 @@ use Magento\Framework\UrlInterface;
 use Magento\Sitemap\Model\ItemProvider\ItemProviderInterface;
 use Magento\Sitemap\Model\Sitemap as MagentoSitemap;
 
-
 class Sitemap extends MagentoSitemap
 {
 
