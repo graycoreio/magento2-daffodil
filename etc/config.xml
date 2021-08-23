@@ -3,7 +3,7 @@
 	<default>
 		<daffodil>
 			<configuration>
-				<url/>
+				<url>https://www.example.com</url>
 				<active>0</active>
 			</configuration>
 			<routes>
