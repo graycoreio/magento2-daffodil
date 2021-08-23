@@ -10,7 +10,9 @@ declare (strict_types = 1);
 namespace Graycore\Daffodil\Sitemap;
 
 use Magento\Framework\UrlInterface;
+use Magento\Sitemap\Model\ItemProvider\ItemProviderInterface;
 use Magento\Sitemap\Model\Sitemap as MagentoSitemap;
+
 
 class Sitemap extends MagentoSitemap
 {
@@ -61,8 +63,8 @@ class Sitemap extends MagentoSitemap
         \Magento\Framework\Data\Collection\AbstractDb $resourceCollection = null,
         array $data = [],
         \Magento\Config\Model\Config\Reader\Source\Deployed\DocumentRoot $documentRoot = null,
-        ItemProviderInterface $itemProvider = null,
-        SitemapConfigReaderInterface $configReader = null,
+        \Magento\Sitemap\Model\ItemProvider\ItemProviderInterface $itemProvider = null,
+        \Magento\Sitemap\Model\SitemapConfigReaderInterface $configReader = null,
         \Magento\Sitemap\Model\SitemapItemInterfaceFactory $sitemapItemFactory = null,
         \Graycore\Daffodil\Configuration\Configuration $configuration
     ) {
