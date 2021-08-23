@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.4](https://github.com/graycoreio/magento2-daffodil/compare/v0.1.3...v0.1.4) (2021-08-23)
+
+
+### Features
+
+* **sitemap:** make sitemap use Daffodil url ([#10](https://github.com/graycoreio/magento2-daffodil/issues/10)) ([dc7e4c4](https://github.com/graycoreio/magento2-daffodil/commit/dc7e4c4ca55dd5ffb30f5505beb4510090db2384))
+
 ### [0.1.3](https://github.com/graycoreio/magento2-daffodil/compare/v0.1.2...v0.1.3) (2021-04-30)
 
 
