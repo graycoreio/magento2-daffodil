@@ -41,7 +41,7 @@ class ProductUrlModifierPlugin
      * @param string $result
      * @return string
      */
-    public function afterGetUrl(\Magento\Catalog\Model\Product $product, string $result)
+    public function afterGetProductUrl(\Magento\Catalog\Model\Product $product, string $result)
     {
         if (!$this->_configuration->isActive()) {
             return $result;
