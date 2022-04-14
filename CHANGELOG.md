@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.2.0](https://github.com/graycoreio/magento2-daffodil/compare/v0.1.4...v0.2.0) (2022-04-14)
+
+
+### ⚠ BREAKING CHANGES
+
+* **emails:** this commit is only compatible with v2.4.3-p1 and forward as a result of https://github.com/magento/magento2/commit/dd350a7b13fb65d39051dfb2f7db44b48cf18da1
+
+### Features
+
+* **emails:** allow daffodilurl in emails ([41a5f80](https://github.com/graycoreio/magento2-daffodil/commit/41a5f8096261f72118030a9e0f4970378f74f9c5))
+* add product URL modifier plugin ([#6](https://github.com/graycoreio/magento2-daffodil/issues/6)) ([4550ba4](https://github.com/graycoreio/magento2-daffodil/commit/4550ba43e98579e99e1e69ceb4ef55b28213ed2a))
+
 ### [0.1.4](https://github.com/graycoreio/magento2-daffodil/compare/v0.1.3...v0.1.4) (2021-08-23)
 
 
