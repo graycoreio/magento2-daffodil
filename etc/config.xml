@@ -7,8 +7,7 @@
 				<active>0</active>
 			</configuration>
 			<routes>
-				<change_password/>
-				<account/>
+				<noop__index__index>noop</noop__index__index>
 			</routes>
 		</daffodil>
 	</default>

@@ -43,12 +43,12 @@ class Configuration
     /**
      * @return string
      */
-    public function getDaffodilUrl()
+    public function getDaffodilUrl(): string
     {
         $configValue = (string) $this->_scopeConfig->getValue(
             self::DAFFODIL_URL,
             ScopeInterface::SCOPE_STORE
         );
-        return rtrim($configValue, '/') . '/';
+        return rtrim($configValue ?? '', '/') . '/';
     }
 }
