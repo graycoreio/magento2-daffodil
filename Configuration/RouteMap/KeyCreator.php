@@ -26,6 +26,6 @@ class KeyCreator
         // We may need to remove the trailing slash from the route to form the key path.
         $route = rtrim($route, "/");
 
-        return self::MAP_CONFIG_PATH . str_replace('/', '__', strtolower($route));
+        return self::MAP_CONFIG_PATH . str_replace('/', '__', $route);
     }
 }
