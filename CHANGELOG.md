@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.1](https://github.com/graycoreio/magento2-daffodil/compare/v0.2.0...v0.2.1) (2022-12-15)
+
+
+### Features
+
+* **routemap, email:** make routermap more precise ([32bc5c9](https://github.com/graycoreio/magento2-daffodil/commit/32bc5c92a00cf8975560db485c454bf87963ef72))
+
 ## [0.2.0](https://github.com/graycoreio/magento2-daffodil/compare/v0.1.4...v0.2.0) (2022-04-14)
 
 
