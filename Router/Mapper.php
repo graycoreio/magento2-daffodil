@@ -5,13 +5,14 @@
  * See LICENSE.md for details.
  */
 
-declare (strict_types = 1);
+declare(strict_types=1);
 
 namespace Graycore\Daffodil\Router;
 
 use Graycore\Daffodil\Configuration\Configuration;
 use Graycore\Daffodil\Configuration\RouteMap;
 use Magento\Framework\App\Config\ScopeConfigInterface;
+use Graycore\Daffodil\Router\RouteNormalizer;
 
 class Mapper
 {
@@ -29,7 +30,7 @@ class Mapper
     }
 
     /**
-     * Map, as generally as plausible, to a known mapped route in confirmation.
+     * Map, as generally as plausible, to a known mapped route in configuration.
      *
      * For example, this would map  "customer/index/index" to "some-path" if the
      * `$route` was "customer" and the resulting map for "customer" returned
@@ -37,14 +38,17 @@ class Mapper
      */
     public function mapRoute(string $url, string $route)
     {
-        /**
-         * The mapping scheme assumes a trailing slash.
-         */
-        if (substr($route, -1) !== "/") {
-            $route = $route . "/";
+        $norm = RouteNormalizer::normalize($route);
+
+        if (!$this->_routeMap->getMappedRoute($norm)) {
+            return $url;
         }
-        $regex = "/" . preg_quote($route, '/') . "(?:.*\/.*\/?)" . "/";
-        return preg_replace($regex, $this->_routeMap->getMappedRoute($route), $url);
+
+        return str_replace(
+            RouteNormalizer::getRouteStringFromPath($url),
+            $this->_routeMap->getMappedRoute($norm),
+            $url
+        );
     }
 
     public function mapDomain($url, $domain)

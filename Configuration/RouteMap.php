@@ -5,10 +5,11 @@
  * See LICENSE.md for details.
  */
 
-declare (strict_types = 1);
+declare(strict_types=1);
 
 namespace Graycore\Daffodil\Configuration;
 
+use Graycore\Daffodil\Configuration\RouteMap\KeyCreator;
 use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Store\Model\ScopeInterface;
 
@@ -17,8 +18,6 @@ use Magento\Store\Model\ScopeInterface;
  */
 class RouteMap
 {
-    const MAP_CONFIG_PATH = "daffodil/routes/";
-
     private $_scopeConfig;
 
     /**
@@ -26,42 +25,45 @@ class RouteMap
      */
     protected $logger;
 
+    private $_keyCreator;
+
     /**
      * @param ScopeConfigInterface $scopeConfig
      */
-    public function __construct(ScopeConfigInterface $scopeConfig, \Psr\Log\LoggerInterface $logger)
-    {
+    public function __construct(
+        ScopeConfigInterface $scopeConfig,
+        \Psr\Log\LoggerInterface $logger,
+        KeyCreator $keyCreator
+    ) {
         $this->_scopeConfig = $scopeConfig;
         $this->logger = $logger;
+        $this->_keyCreator = $keyCreator;
     }
 
-    private function createConfigKey($route)
+    /**
+     * Retrieve the relevant path for a given route.
+     * Routes are assumed to be Magento controller-like URIs, i.e.,
+     * 
+     * - customer
+     * - customer/index
+     * - customer/index/index
+     * - customer/test
+     */
+    public function getMappedRoute(string $route): ?string
     {
-        // We need to remove the trailing slash from the route to form the key path.
-        if (substr($route, -1) === "/") {
-            $route = substr($route, 0, -1);
-        }
-
-        return self::MAP_CONFIG_PATH . str_replace('/', '_', strtolower($route));
-    }
-
-    public function getMappedRoute($route)
-    {
+        $key = $this->_keyCreator->create($route);
         try {
             $mapping = $this->_scopeConfig->getValue(
-                $this->createConfigKey($route),
+                $key,
                 ScopeInterface::SCOPE_STORE
             );
             if (!$mapping) {
                 $this->logger->info("`
                     Daffodil PWA EMAIL: No PWA route mapping for {$route}. 
-                    Consider adding a custom configuration key for {$this->createConfigKey($route)}
+                    Consider adding a custom configuration key for {$key}
                 `");
             }
-            return $this->_scopeConfig->getValue(
-                $this->createConfigKey($route),
-                ScopeInterface::SCOPE_STORE
-            );
+            return $mapping;
         } catch (\Exception $e) {
             return $route;
         }
