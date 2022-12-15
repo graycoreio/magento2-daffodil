@@ -14,7 +14,7 @@ class KeyCreatorTest extends TestCase
             ['base case', '', 'daffodil/routes/noop__index__index'],
             ['happy path', 'customer/index/index', 'daffodil/routes/customer__index__index'],
             ['happy path', 'catalog/product/view', 'daffodil/routes/catalog__product__view'],
-
+            ['case check', 'customer/account/createPassword', 'daffodil/routes/customer__account__createPassword'],
         ];
     }
 
