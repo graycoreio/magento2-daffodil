@@ -5,7 +5,7 @@
  * See LICENSE.md for details.
  */
 
-declare (strict_types = 1);
+declare(strict_types=1);
 
 namespace Graycore\Daffodil\Plugins;
 
@@ -52,7 +52,7 @@ class EmailTemplateUrlModifierPlugin
         if (!$this->_configuration->isActive()) {
             return $result;
         }
-        $domain = $this->_urlModel->setScope($store)->getBaseUrl();
+        $domain = $this->_urlModel->getBaseUrl();
 
         $result = $this->_mapper->mapDomain($result, $domain);
         $result = $this->_mapper->mapRoute($result, $route);
