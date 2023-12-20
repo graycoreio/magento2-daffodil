@@ -37,6 +37,9 @@ class EmulatedAdminEmailUrls
     {
         if ($this->_configuration->isActive()) {
             $this->originalScope = $this->_urlModel->getScope();
+            if ($this->originalScope === null) {
+                $this->originalScope = $this->_store->getStore('admin');
+            }
             $this->_urlModel->setScope($this->_store->getStore());
         }
 
