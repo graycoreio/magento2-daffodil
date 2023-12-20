@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.2.2](https://github.com/graycoreio/magento2-daffodil/compare/v0.2.1...v0.2.2) (2023-12-20)
+
+
+### Features
+
+* **sitemap:** make sitemap 8.1 compat ([#22](https://github.com/graycoreio/magento2-daffodil/issues/22)) ([e53fd3a](https://github.com/graycoreio/magento2-daffodil/commit/e53fd3a99513b654a973f2feccfd4c8e3c4dc403))
+
+
+### Bug Fixes
+
+* **email:** set scope correctly on admin emails ([bc984a6](https://github.com/graycoreio/magento2-daffodil/commit/bc984a69141aeab581803af0755cec067f28adfa))
+* fixing wrong redirect when restoring admin password ([#24](https://github.com/graycoreio/magento2-daffodil/issues/24)) ([d4ecb56](https://github.com/graycoreio/magento2-daffodil/commit/d4ecb56c51127457112821072d50ce3bb5050722))
+
+
+### Miscellaneous Chores
+
+* add release-please support ([589ab8d](https://github.com/graycoreio/magento2-daffodil/commit/589ab8d3606f7b692295cdd5dae9a3171b02b37f))
+
 ### [0.2.1](https://github.com/graycoreio/magento2-daffodil/compare/v0.2.0...v0.2.1) (2022-12-15)
 
 
