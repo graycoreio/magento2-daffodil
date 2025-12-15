@@ -60,13 +60,13 @@ class Sitemap extends MagentoSitemap
         \Magento\Framework\App\RequestInterface $request,
         \Magento\Framework\Stdlib\DateTime $dateTime,
         \Graycore\Daffodil\Configuration\Configuration $configuration,
-        \Magento\Framework\Model\ResourceModel\AbstractResource $resource = null,
-        \Magento\Framework\Data\Collection\AbstractDb $resourceCollection = null,
+        ?\Magento\Framework\Model\ResourceModel\AbstractResource $resource = null,
+        ?\Magento\Framework\Data\Collection\AbstractDb $resourceCollection = null,
         array $data = [],
-        \Magento\Config\Model\Config\Reader\Source\Deployed\DocumentRoot $documentRoot = null,
-        \Magento\Sitemap\Model\ItemProvider\ItemProviderInterface $itemProvider = null,
-        \Magento\Sitemap\Model\SitemapConfigReaderInterface $configReader = null,
-        \Magento\Sitemap\Model\SitemapItemInterfaceFactory $sitemapItemFactory = null
+        ?\Magento\Config\Model\Config\Reader\Source\Deployed\DocumentRoot $documentRoot = null,
+        ?\Magento\Sitemap\Model\ItemProvider\ItemProviderInterface $itemProvider = null,
+        ?\Magento\Sitemap\Model\SitemapConfigReaderInterface $configReader = null,
+        ?\Magento\Sitemap\Model\SitemapItemInterfaceFactory $sitemapItemFactory = null
     ) {
         parent::__construct(
             $context,
