@@ -18,6 +18,9 @@ use Magento\Store\Model\ScopeInterface;
  */
 class RouteMap
 {
+    /**
+     * @var ScopeConfigInterface
+     */
     private $_scopeConfig;
 
     /**
@@ -25,10 +28,15 @@ class RouteMap
      */
     protected $logger;
 
+    /**
+     * @var KeyCreator
+     */
     private $_keyCreator;
 
     /**
      * @param ScopeConfigInterface $scopeConfig
+     * @param \Psr\Log\LoggerInterface $logger
+     * @param KeyCreator $keyCreator
      */
     public function __construct(
         ScopeConfigInterface $scopeConfig,
@@ -42,12 +50,15 @@ class RouteMap
 
     /**
      * Retrieve the relevant path for a given route.
+     *
      * Routes are assumed to be Magento controller-like URIs, i.e.,
-     * 
      * - customer
      * - customer/index
      * - customer/index/index
      * - customer/test
+     *
+     * @param string $route
+     * @return string|null
      */
     public function getMappedRoute(string $route): ?string
     {

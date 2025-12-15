@@ -17,9 +17,12 @@ use Magento\Store\Model\ScopeInterface;
  */
 class Configuration
 {
-    const ACTIVE = 'daffodil/configuration/active';
-    const DAFFODIL_URL = 'daffodil/configuration/url';
+    public const ACTIVE = 'daffodil/configuration/active';
+    public const DAFFODIL_URL = 'daffodil/configuration/url';
 
+    /**
+     * @var ScopeConfigInterface
+     */
     private $_scopeConfig;
     /**
      * @param ScopeConfigInterface $scopeConfig
@@ -30,6 +33,8 @@ class Configuration
     }
 
     /**
+     * Check if Daffodil is active.
+     *
      * @return bool
      */
     public function isActive()
@@ -41,6 +46,8 @@ class Configuration
     }
 
     /**
+     * Get the Daffodil URL.
+     *
      * @return string
      */
     public function getDaffodilUrl(): string

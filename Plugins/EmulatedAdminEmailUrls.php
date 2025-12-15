@@ -15,13 +15,30 @@ use Magento\Store\Model\StoreManagerInterface;
 
 class EmulatedAdminEmailUrls
 {
+    /**
+     * @var Configuration
+     */
     private $_configuration;
+
+    /**
+     * @var \Magento\Framework\UrlInterface
+     */
     private $_urlModel;
+
+    /**
+     * @var StoreManagerInterface
+     */
     private $_store;
 
-    private $originalScope;
     /**
-     * @param ScopeConfigInterface $scopeConfig
+     * @var mixed
+     */
+    private $originalScope;
+
+    /**
+     * @param \Magento\Framework\UrlInterface $urlModel
+     * @param Configuration $configuration
+     * @param StoreManagerInterface $store
      */
     public function __construct(
         \Magento\Framework\UrlInterface $urlModel,
@@ -33,6 +50,11 @@ class EmulatedAdminEmailUrls
         $this->_store = $store;
     }
 
+    /**
+     * Set URL scope to current store before getting transport.
+     *
+     * @return null
+     */
     public function beforeGetTransport()
     {
         if ($this->_configuration->isActive()) {
@@ -47,7 +69,11 @@ class EmulatedAdminEmailUrls
     }
 
     /**
-     * 
+     * Restore URL scope after getting transport.
+     *
+     * @param mixed $subject
+     * @param mixed $result
+     * @return mixed
      */
     public function afterGetTransport($subject, $result)
     {

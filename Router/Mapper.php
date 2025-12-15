@@ -16,12 +16,19 @@ use Graycore\Daffodil\Router\RouteNormalizer;
 
 class Mapper
 {
-
+    /**
+     * @var Configuration
+     */
     private $_configuration;
+
+    /**
+     * @var RouteMap
+     */
     private $_routeMap;
 
     /**
-     * @param ScopeConfigInterface $scopeConfig
+     * @param Configuration $configuration
+     * @param RouteMap $routeMap
      */
     public function __construct(Configuration $configuration, RouteMap $routeMap)
     {
@@ -35,6 +42,10 @@ class Mapper
      * For example, this would map  "customer/index/index" to "some-path" if the
      * `$route` was "customer" and the resulting map for "customer" returned
      * "some-path".
+     *
+     * @param string $url
+     * @param string $route
+     * @return string
      */
     public function mapRoute(string $url, string $route)
     {
@@ -51,6 +62,13 @@ class Mapper
         );
     }
 
+    /**
+     * Map domain to Daffodil URL.
+     *
+     * @param string $url
+     * @param string $domain
+     * @return string
+     */
     public function mapDomain($url, $domain)
     {
         return str_replace($domain, $this->_configuration->getDaffodilUrl(), $url);

@@ -17,7 +17,30 @@ use Magento\Store\Model\StoreManagerInterface;
 class CategoryUrlModifierPlugin
 {
     /**
-     * @param ScopeConfigInterface $scopeConfig
+     * @var Configuration
+     */
+    private $_configuration;
+
+    /**
+     * @var \Magento\Framework\UrlInterface
+     */
+    private $_urlModel;
+
+    /**
+     * @var Mapper
+     */
+    private $_mapper;
+
+    /**
+     * @var StoreManagerInterface
+     */
+    private $store;
+
+    /**
+     * @param \Magento\Framework\UrlInterface $urlModel
+     * @param Configuration $configuration
+     * @param Mapper $mapper
+     * @param StoreManagerInterface $store
      */
     public function __construct(
         \Magento\Framework\UrlInterface $urlModel,

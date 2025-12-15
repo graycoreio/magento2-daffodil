@@ -13,11 +13,15 @@ use Laminas\Uri\UriFactory;
 
 class RouteNormalizer
 {
-    const FAKE_DOMAIN = "http://www.example.com";
+    public const FAKE_DOMAIN = "http://www.example.com";
 
     /**
      * Normalizes a route into a well-formed Magento route path.
+     *
      * I.e. `customer` -> `customer/index/index`
+     *
+     * @param string $path
+     * @return string
      */
     public static function normalize(string $path): string
     {
@@ -33,7 +37,6 @@ class RouteNormalizer
         $routeParts[1] = $routeParts[1] ?? 'index';
         $routeParts[2] = $routeParts[2] ?? 'index';
 
-
         //Handle possibly falsy values like empty strings.
         $parts[0] = $routeParts[0] ?: 'index';
         $parts[1] = $routeParts[1] ?: 'index';
@@ -44,6 +47,9 @@ class RouteNormalizer
 
     /**
      * Retrieves the router-relevant portion of the uri.
+     *
+     * @param string $url
+     * @return string
      */
     public static function getRouteStringFromPath(string $url): string
     {
@@ -61,7 +67,10 @@ class RouteNormalizer
     }
 
     /**
-     * Takes a path, and coerces it to 
+     * Takes a path, and coerces it to a URI.
+     *
+     * @param string $path
+     * @return string
      */
     public static function coercePathToUri(string $path): string
     {

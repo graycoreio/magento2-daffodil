@@ -11,11 +11,14 @@ namespace Graycore\Daffodil\Configuration\RouteMap;
 
 class KeyCreator
 {
-    const MAP_CONFIG_PATH = "daffodil/routes/";
-    const NOOP_ROUTE = "noop__index__index";
+    public const MAP_CONFIG_PATH = "daffodil/routes/";
+    public const NOOP_ROUTE = "noop__index__index";
 
     /**
      * Create a configuration key for a given route.
+     *
+     * @param string $route
+     * @return string
      */
     public function create($route)
     {

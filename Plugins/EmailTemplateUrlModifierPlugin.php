@@ -17,6 +17,9 @@ use Magento\Store\Model\Store;
 
 class EmailTemplateUrlModifierPlugin
 {
+    /**
+     * @var Configuration
+     */
     private $_configuration;
 
     /**
@@ -24,10 +27,15 @@ class EmailTemplateUrlModifierPlugin
      */
     private $_urlModel;
 
+    /**
+     * @var Mapper
+     */
     private $_mapper;
 
     /**
-     * @param ScopeConfigInterface $scopeConfig
+     * @param \Magento\Framework\UrlInterface $urlModel
+     * @param Configuration $configuration
+     * @param Mapper $mapper
      */
     public function __construct(
         \Magento\Framework\UrlInterface $urlModel,
@@ -42,6 +50,8 @@ class EmailTemplateUrlModifierPlugin
     /**
      * Generate URL for the specified store.
      *
+     * @param Template $subject
+     * @param string $result
      * @param Store $store
      * @param string $route
      * @param array $params

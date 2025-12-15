@@ -29,19 +29,20 @@ class Sitemap extends MagentoSitemap
      * @param \Magento\Framework\Escaper $escaper
      * @param \Magento\Sitemap\Helper\Data $sitemapData
      * @param \Magento\Framework\Filesystem $filesystem
-     * @param ResourceModel\Catalog\CategoryFactory $categoryFactory
-     * @param ResourceModel\Catalog\ProductFactory $productFactory
-     * @param ResourceModel\Cms\PageFactory $cmsFactory
+     * @param \Magento\Sitemap\Model\ResourceModel\Catalog\CategoryFactory $categoryFactory
+     * @param \Magento\Sitemap\Model\ResourceModel\Catalog\ProductFactory $productFactory
+     * @param \Magento\Sitemap\Model\ResourceModel\Cms\PageFactory $cmsFactory
      * @param \Magento\Framework\Stdlib\DateTime\DateTime $modelDate
      * @param \Magento\Store\Model\StoreManagerInterface $storeManager
      * @param \Magento\Framework\App\RequestInterface $request
      * @param \Magento\Framework\Stdlib\DateTime $dateTime
+     * @param \Graycore\Daffodil\Configuration\Configuration $configuration
      * @param \Magento\Framework\Model\ResourceModel\AbstractResource|null $resource
      * @param \Magento\Framework\Data\Collection\AbstractDb|null $resourceCollection
      * @param array $data
-     * @param DocumentRoot|null $documentRoot
+     * @param \Magento\Config\Model\Config\Reader\Source\Deployed\DocumentRoot|null $documentRoot
      * @param ItemProviderInterface|null $itemProvider
-     * @param SitemapConfigReaderInterface|null $configReader
+     * @param \Magento\Sitemap\Model\SitemapConfigReaderInterface|null $configReader
      * @param \Magento\Sitemap\Model\SitemapItemInterfaceFactory|null $sitemapItemFactory
      * @SuppressWarnings(PHPMD.ExcessiveParameterList)
      */
@@ -93,8 +94,10 @@ class Sitemap extends MagentoSitemap
     }
 
     /**
-     * Get the base url for the sitemap from Daffodil configuration as opposed
-     * to Magento store configuration.
+     * Get the base url for the sitemap from Daffodil configuration as opposed to Magento store configuration.
+     *
+     * @param string $type
+     * @return string
      */
     protected function _getStoreBaseUrl($type = UrlInterface::URL_TYPE_LINK)
     {

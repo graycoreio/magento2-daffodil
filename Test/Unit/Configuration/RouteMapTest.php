@@ -46,7 +46,6 @@ class RouteMapTest extends TestCase
             new KeyCreator(),
         );
 
-
         $this->assertEquals(
             $result,
             $subject->getMappedRoute($route),

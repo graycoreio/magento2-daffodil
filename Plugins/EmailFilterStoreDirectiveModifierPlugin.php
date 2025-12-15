@@ -16,6 +16,9 @@ use Magento\Framework\Filter\Template\Tokenizer\Parameter;
 
 class EmailFilterStoreDirectiveModifierPlugin
 {
+    /**
+     * @var Configuration
+     */
     private $_configuration;
 
     /**
@@ -23,10 +26,15 @@ class EmailFilterStoreDirectiveModifierPlugin
      */
     private $_urlModel;
 
+    /**
+     * @var Mapper
+     */
     private $_mapper;
 
     /**
-     * @param ScopeConfigInterface $scopeConfig
+     * @param \Magento\Framework\UrlInterface $urlModel
+     * @param Configuration $configuration
+     * @param Mapper $mapper
      */
     public function __construct(
         \Magento\Framework\UrlInterface $urlModel,
@@ -39,11 +47,11 @@ class EmailFilterStoreDirectiveModifierPlugin
     }
 
     /**
-     * Generate URL for the specified store.
+     * Modify store directive URL after processing.
      *
-     * @param  Store  $store
-     * @param  string $route
-     * @param  array  $params
+     * @param \Magento\Email\Model\Template\Filter $subject
+     * @param string $result
+     * @param array $construction
      * @return string
      */
     public function afterStoreDirective(\Magento\Email\Model\Template\Filter $subject, $result, $construction)
@@ -69,7 +77,7 @@ class EmailFilterStoreDirectiveModifierPlugin
     /**
      * Return associative array of parameters.
      *
-     * @param  string $value raw parameters
+     * @param string $value raw parameters
      * @return array
      */
     protected function getParameters($value)
