@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.2.4](https://github.com/graycoreio/magento2-daffodil/compare/v0.2.3...v0.2.4) (2026-05-18)
+
+
+### Miscellaneous Chores
+
+* **deps:** bump graycoreio/github-actions-magento2 from [@main](https://github.com/main) to 8.2.0 ([7041a5f](https://github.com/graycoreio/magento2-daffodil/commit/7041a5fcd3b768f9143531ff0c099a3d258dd0fc))
+
 ## [0.2.3](https://github.com/graycoreio/magento2-daffodil/compare/v0.2.2...v0.2.3) (2025-12-15)
 
 
