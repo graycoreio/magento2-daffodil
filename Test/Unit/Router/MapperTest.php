@@ -5,11 +5,12 @@ namespace Graycore\Daffodil\Test\Unit\Router;
 use Graycore\Daffodil\Configuration\Configuration;
 use Graycore\Daffodil\Configuration\RouteMap;
 use Graycore\Daffodil\Router\Mapper;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
 class MapperTest extends TestCase
 {
-    public function routeTestProvider()
+    public static function routeTestProvider()
     {
         return [
             [
@@ -108,6 +109,7 @@ class MapperTest extends TestCase
     /**
      * @dataProvider routeTestProvider
      */
+    #[DataProvider('routeTestProvider')]
     public function testItMapsRoutesCorrectly(string $url, string $route, ?string $map, string $result)
     {
         $routeMap = $this->createMock(RouteMap::class);

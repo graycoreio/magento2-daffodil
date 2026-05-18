@@ -3,11 +3,12 @@
 namespace Graycore\Daffodil\Test\Unit\Configuration\RouteMap;
 
 use Graycore\Daffodil\Configuration\RouteMap\KeyCreator;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
 class KeyCreatorTest extends TestCase
 {
-    public function routeDataProvider()
+    public static function routeDataProvider()
     {
         return [
             ['null map', '', 'daffodil/routes/noop__index__index'],
@@ -21,6 +22,7 @@ class KeyCreatorTest extends TestCase
     /**
      * @dataProvider routeDataProvider
      */
+    #[DataProvider('routeDataProvider')]
     public function testCreatingAConfigKeyFromARoute(string $case, string $key, string $result)
     {
         $subject = new KeyCreator();

@@ -3,6 +3,7 @@
 namespace Graycore\Daffodil\Test\Unit\Router;
 
 use Graycore\Daffodil\Router\RouteNormalizer;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
 class RouteNormalizerTest extends TestCase
@@ -10,7 +11,7 @@ class RouteNormalizerTest extends TestCase
     /**
      * Data for the test.
      */
-    public function routeTestProvider()
+    public static function routeTestProvider()
     {
         return [
             ['', 'index/index/index'],
@@ -42,6 +43,7 @@ class RouteNormalizerTest extends TestCase
     /**
      * @dataProvider routeTestProvider
      */
+    #[DataProvider('routeTestProvider')]
     public function testItNormalizesRoutesCorrectly(string $route, string $result)
     {
         $this->assertEquals(RouteNormalizer::normalize($route), $result);
@@ -50,7 +52,7 @@ class RouteNormalizerTest extends TestCase
     /**
      * Data for the test.
      */
-    public function routePathData()
+    public static function routePathData()
     {
         return [
             ['', ''],
@@ -82,6 +84,7 @@ class RouteNormalizerTest extends TestCase
     /**
      * @dataProvider routePathData
      */
+    #[DataProvider('routePathData')]
     public function testItComputesTheCorrectRouteStringFromThePath(string $path, string $result)
     {
         return $this->assertEquals(

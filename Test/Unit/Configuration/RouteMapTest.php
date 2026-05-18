@@ -5,13 +5,14 @@ namespace Graycore\Daffodil\Test\Unit\Configuration;
 use Graycore\Daffodil\Configuration\RouteMap;
 use Graycore\Daffodil\Configuration\RouteMap\KeyCreator;
 use Magento\Framework\App\Config\ScopeConfigInterface;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
 use PHPUnit\Framework\MockObject\MockObject;
 
 class RouteMapTest extends TestCase
 {
-    public function routeMapProvider()
+    public static function routeMapProvider()
     {
         return [
             ['null map', '', null, ''],
@@ -23,6 +24,7 @@ class RouteMapTest extends TestCase
     /**
      * @dataProvider routeMapProvider
      */
+    #[DataProvider('routeMapProvider')]
     public function testItRetrievesMappingsFromTheRouteMap(
         string $case,
         ?string $route,
