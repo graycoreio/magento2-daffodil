@@ -4,7 +4,7 @@
         <arguments>
             <argument name="configPaths" xsi:type="array">
                 <item name="daffodil/configuration" xsi:type="array">
-                    <item name="daffodil/configuration/daffodilurl" xsi:type="string">1</item>
+                    <item name="daffodil/configuration/url" xsi:type="string">1</item>
                 </item>
             </argument>
         </arguments>
